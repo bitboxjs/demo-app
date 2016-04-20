@@ -1,0 +1,30 @@
+import bitbox from 'bitbox'
+import {body,div,p,h1,hr,pre,input} from 'bitbox/elements'
+import counter from 'demo/counter/index.box'
+
+export default bitbox(({ props, state, signals }) => {
+
+	const onInput = (key) => (e) => signals.changed({ [key]: e.target.value })
+
+	<div return font=[18, 'Helvetica Neue'] bg=[null, 500] style={ transition: 'background 0.3s' } color='white' margin=24 padding=24 shadow=[0,0,10,'grey',0.8] radius=2>
+
+		<input on-input('name') value=(state.name) +autofocus
+			style={
+				border: 'none',
+				outline: 'none',
+				fontSize: '42px',
+				background: 'transparent',
+				color: 'white',
+				fontWeight: 'bold'
+			} />
+
+		<pre text => Some more information about...</pre>
+
+		<div bg=['white', 0.7] color=['black', 0.7]  padding=8 radius=2 shadow=[0,0,10,'black',0.2]>
+			<counter:foo />
+			<counter:bar />
+		</div>
+
+	</div>
+
+})

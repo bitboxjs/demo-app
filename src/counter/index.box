@@ -1,0 +1,16 @@
+import bitbox from 'bitbox'
+import {div,h1,button,hr} from 'bitbox/elements'
+
+export default bitbox(({ props, state, signals }) => {
+
+	<div return display='inline-block' padding=16 margin=8 radius=2 bg=['black', 0.1]>
+
+		<div => props.module</div>
+		<h1 -margin => String(state.count)</h1>
+
+		<button on-click=(signals.inc) => 'inc'</button>
+		<button on-click=(signals.dec) => 'dec'</button>
+
+	</div>
+
+})
